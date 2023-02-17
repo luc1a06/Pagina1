@@ -1,14 +1,35 @@
 body{
-	background-color: #C2D5A4;
+	background-color: #AEC1AA;
 }
 .center{
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	width: 50%;
+	width: 500px;
 }
+
 titulo{
+	margin-left: 200px;
   font-family: 'Drama Protocols', sans-serif;
   font-size: 40px;
   text-align: center;                                              
+}
+
+table{
+	margin-left: 200px;
+	background-color: grey;
+	color: white;
+	text-align: center;
+	width: 700px;
+}
+
+th{
+	color: black;
+}
+
+hamburguesa{
+	color: orange;
+	font-weight: 700;
+	font-family: ;
 }
