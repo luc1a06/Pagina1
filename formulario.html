@@ -40,19 +40,64 @@
 <h1>FORMULARIO</h1>
 
 <form action="pedidorealizado.html" method="get">
-  <p>Nombre: <input type="text" name="nombre" id="nombre" size="40">
+  <p>Nombre: <input type="text" name="Nombre" id="Nombre" size="40">
   </p>
-  <p>Apellido: <input type="text" name="apellido" id="apellido" size="40">
+  <p>Apellido: <input type="text" name="Apellido" id="Apellido" size="40">
   </p>
-  <p>Direccion <input type="text" name="direccion" id="direccion" size="35">
+  <p>Direccion <input type="text" name="Direccion" id="Direccion" size="35">
   </p>
-  <p>Colonia <input type="text" name="colonia" id="colonia" size="40">
+  <p>Colonia <input type="text" name="Colonia" id="Colonia" size="40">
   </p>
-  <p>Telefono <input type="text" name="telefono" id="telefono" size="40">
+  <p>Telefono <input type="text" name="Telefono" id="Telefono" size="40">
   </p>
-  <p>Sexo <input type="radio" name="sexo" value="Hombre"> <input type="radio" name="sexo" value="Mujer"> <br><br>
+  <p>Sexo <input type="radio" name="Sexo" value="Hombre"> <input type="radio" name="sexo" value="Mujer"> <br><br>
     <input type="submit" value="Pedido">
     <input type="reset" value="Borrar">  
+    <p> Que vas a pedir:
+      <select name="menu" id="menu">
+        <optgroup label="Hamburguesa">
+          <option value="Hamburguesa">Hamburguesa 1</option>
+          <option value="Hamburguesa">Hamburguesa 2</option>
+          <option value="Hamburguesa">Hamburguesa 3</option>
+          <option value="Hamburguesa">Hamburguesa 4</option>
+        </optgroup>
+        <optgroup label="Tacos">
+          <option value="Tacos">Tacos 1</option>
+          <option value="Tacos">Tacos 2</option>
+          <option value="Tacos">Tacos 3</option>
+          <option value="Tacos">Tacos 4</option>
+        </optgroup>
+        <optgroup label="Tortas">
+          <option value="Hamburguesa">Hamburguesa 1</option>
+          <option value="Hamburguesa">Hamburguesa 2</option>
+          <option value="Hamburguesa">Hamburguesa 3</option>
+          <option value="Hamburguesa">Hamburguesa 4</option>
+        </optgroup>
+      </select>
+      <h1 style="color: grey;">Complementos</h1>
+      <input type="checkbox" id="Tomate" checked> <label for="tomate" style="font-size: 20px;">Tomate</label><br>
+      <input type="checkbox" id="Cebolla"> <label for="cebolla" style="font-size: 20px;">Cebolla</label><br>
+      <input type="checkbox" id="Pepinillos"> <label for="pepinillos" style="font-size: 20px;">Pepinillos</label><br>
+      <input type="checkbox" id="Piña"> <label for="piña" style="font-size: 20px;">Piña</label><br>
+    </p>   
 </form>
+<script type="text/javascript">
+  const form=document.getElementbyId("Pedido");
+  form.addEventListener("submit",function(event){
+    event.preventDefault();
+    const formdata= new formData(form);
+    const orden={
+      Nombre:formData.get("Nombre"),
+      Apellido:formData.get("Apellido"),
+      Telefono:formData.get("Telefono"),
+      Direccion:formData.get("Direccion"),
+      Colonia:formData.get("Colonia"),
+      Sexo:formData.get("Sexo"),
+      Menu:formData.get("Menu")
+    };
+    localStorage.setItem("orden",JSON.stringity(orden))
+    window.location.href="pedidorealizado.html";
+});
+</script>
 </body>
 </html>

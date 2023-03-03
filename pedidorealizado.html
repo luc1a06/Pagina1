@@ -39,6 +39,33 @@
 	</div>
 
   <h1>PEDIDO REALIZADO</h1>
-
+  <h3>con exito</h3>
+  <ul>
+    <p><strong>Nombre:</strong><span id="Nombre"></span></p>
+    <p><strong>Apellido:</strong><span id="Apellido"></span></p>
+    <p><strong>Telefono:</strong><span id="Telefono"></span></p>
+    <p><strong>Direccion:</strong><span id="Direccion"></span></p>
+    <p><strong>Colonia:</strong><span id="Colonia"></span></p>
+    <p><strong>Sexo:</strong><span id="Sexo"></span></p>
+    <p><strong>Menu:</strong><span id="Menu"></span></p>
+    <p><strong>Tomate:</strong><span id="Tomate"></span></p>
+    <p><strong>Cebolla:</strong><span id="Cebolla"></span></p>
+    <p><strong>Pepinillos:</strong><span id="Pepinillos"></span></p>
+    <p><strong>Piña:</strong><span id="Piña"></span></p>
+    <script type="text/javascript">
+      const orden=JSON.parse(localStorage.getItem("orden"));
+      document.getElementById("Nombre").textContent=orden.Nombre;
+      document.getElementById("Apellido").textContent=orden.Apellido;
+      document.getElementById("Telefono").textContent=orden.Telefono;
+      document.getElementById("Direccion").textContent=orden.Direccion;
+      document.getElementById("Colonia").textContent=orden.Colonia;
+      document.getElementById("Sexo").textContent=orden.Sexo;
+      document.getElementById("Menu").textContent=orden.Menu;
+      document.getElementById("Tomate").textContent=orden.Tomate;
+      document.getElementById("Cebolla").textContent=orden.Cebolla;
+      document.getElementById("Pepinillos").textContent=orden.Pepinillos;
+      document.getElementById("Piña").textContent=orden.Piña;
+    </script>
+  </ul>
 </body>
 </html>
