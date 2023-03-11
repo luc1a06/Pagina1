@@ -1,5 +1,5 @@
 body{
-	background-color: #AEC1AA;
+	background-color: #E7EAF1;
 }
 .center{
 	display: block;
@@ -10,26 +10,51 @@ body{
 }
 
 titulo{
-	margin-left: 200px;
-  font-family: 'Drama Protocols', sans-serif;
+  margin-left: 100px;
+  font-family: 'SF Groove Machine', sans-serif;
+  font-size: 40px;
+  text-align: center;                                              
+}
+
+titulof{
+	margin-left: 100px;
+  font-family: 'SF Groove Machine', sans-serif;
   font-size: 40px;
   text-align: center;                                              
 }
 
 table{
-	margin-left: 200px;
-	background-color: grey;
-	color: white;
+	margin-left: 100px;
+	background-color: #CFD2D7;
+	color: #07257D;
 	text-align: center;
-	width: 700px;
+	width: 900px;
+	border-color: #8A8CA3;
 }
 
 th{
+	font-family: 'Pirates of Cydonia', sans-serif;                                            
 	color: black;
+	font-weight: 1000;
+	text-align: center;
 }
 
-hamburguesa{
-	color: orange;
+td{
+	color: #07257D;
 	font-weight: 700;
 	font-family: ;
+}
+texto{
+	font-family: 'Pirates of Cydonia', sans-serif;
+	font-size: 20px;
+}
+texto1{
+	font-family: 'SF Groove Machine', sans-serif;
+	font-size: 40px;
+	margin-left: 50px;
+}
+
+x{
+font-family: 'Pirates of Cydonia', sans-serif;
+font-size: 20px;
 }
