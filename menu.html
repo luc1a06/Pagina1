@@ -40,76 +40,28 @@
       </nav>
 	</div>
 
-  <titulo>MENú</titulo>
+  <titulo>MENU DEL RESTAURANTE</titulo>
 
-    <table>
-      <tr>
-        <th><h3>Imagen</h3></th>
-        <th><h3>Nombres</h3></th>
-        <th><h3>Ingredientes</h3></th>
-        <th><h3>Precios</h3></th>
-      </tr>
-      <tr>
-        <td><img src="hamburguesa.png" width="150px" height="100px"></td>
-        <td><hamburguesa>Hamburguesa</hamburguesa></td>
-        <td>Lechuga, Carne, Queso, Mayonesa</td>
-        <td>$120</td>
-      </tr>
-      <tr>
-        <td><img src="tacos.png" width="150px" height="100px"></td>
-        <td>Tacos</td>
-        <td>Queso, Carne, Trompo, Cilantro, Cebolla</td>
-        <td>$80</td>
-      </tr>
-      <tr>
-        <td><img src="boneless.png" width="150px" height="100px"></td>
-        <td>Boneless</td>
-        <td>Papas, Aderezo</td>
-        <td>$140</td>
-      </tr>
-      <tr>
-        <td><img src="polloasado.png" width="150px" height="100px"></td>
-        <td>Pollo asado</td>
-        <td>Tortillas, Arroz, Pure de papa, Salsa</td>
-        <td>$80</td>
-      </tr>
-      <tr>
-        <td><img src="hotdogs.png" width="150px" height="100px"></td>
-        <td>Hotdogs</td>
-        <td>Mayonesa, Mostaza, Catsup</td>
-        <td>$50</td>
-      </tr>
-      <tr>
-        <td><img src="alitas.png" width="150px" height="100px"></td>
-        <td>Alitas</td>
-        <td>Ensalada</td>
-        <td>$80</td>
-      </tr>
-      <tr>
-        <td><img src="pollofrito.png" width="150px" height="100px"></td>
-        <td>Pollo frito</td>
-        <td>Pure, Bisquets, Ensalada </td>
-        <td>$100</td>
-      </tr>
-      <tr>
-        <td><img src="tostadas.png" width="150px" height="100px"></td>
-        <td>Tostadas</td>
-        <td>Ensalada, Salsa, Queso</td>
-        <td>$70</td>
-      </tr>
-      <tr>
-        <td><img src="pizza.png" width="150px" height="100px"></td>
-        <td>Pizza</td>
-        <td>Pepperoni, Hawaiana</td>
-        <td>$90</td>
-      </tr>
-      <tr>
-        <td><img src="nuggets.png" width="150px" height="100px"></td>
-        <td>Nuggets</td>
-        <td>Papas fritas</td>
-        <td>$70</td>
-      </tr>
-    </table>
+  <div id="menu"></div>
+  <script type="text/javascript">
+    fetch('menu.json')
+    .then(response=>response.json())
+    .then(data=>{
+      const menu=document.getElementById('menu');
+      data.menu.forEach(item=>{
+        const container=document.getElementById('div');
+        container.classList.add('item');
+        container.innerHTML=`
+        <img src="{item.imagen}" alt"${item.nombre}">
+        ${item.nombre}<br>
+        <p>${item.descripcion}
 
+        `;
+        menu.appendChil
+      });
+    });
+
+  </script>
+    
 </body>
 </html>

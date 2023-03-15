@@ -1,5 +1,5 @@
 body{
-	background-color: #E7EAF1;
+	background-color: #668586;
 }
 .center{
 	display: block;
@@ -7,6 +7,9 @@ body{
 	margin-right: auto;
 	width: 50%;
 	width: 500px;
+}
+nav{
+	color:white;
 }
 
 titulo{
@@ -25,7 +28,7 @@ titulof{
 
 table{
 	margin-left: 100px;
-	background-color: #CFD2D7;
+	background-color: #93C6D6;
 	color: #07257D;
 	text-align: center;
 	width: 900px;
