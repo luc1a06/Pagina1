@@ -19,7 +19,7 @@
 </head>
 <body>
 	<div style="margin: 24px;">
-      <nav class="navbar navbar-light" style="background-color: #696D7D;">
+      <nav class="navbar navbar-light" style="background-color: #7D4E57;">
       	<div class="container">
       		<a class="navbar-brand" href="index.html">Inicio</a>
       		<ul class="nav navbar-nav">
@@ -40,28 +40,61 @@
       </nav>
 	</div>
 
-  <titulo>MENU DEL RESTAURANTE</titulo>
+  <titulo>MENÚ DEL RESTAURANTE</titulo>
 
   <div id="menu"></div>
+
   <script type="text/javascript">
     fetch('menu.json')
     .then(response=>response.json())
     .then(data=>{
-      const menu=document.getElementById('menu');
-      data.menu.forEach(item=>{
-        const container=document.getElementById('div');
-        container.classList.add('item');
-        container.innerHTML=`
-        <img src="{item.imagen}" alt"${item.nombre}">
-        ${item.nombre}<br>
-        <p>${item.descripcion}
+      const tabla = document.createElement('table');
+      tabla.innerHTML=`
+      <thead>
+      <tr>
+          <th>Categoria</th>
+          <th>Imagen</th>
+          <th>Producto</th>
+          <th>Descripcion</th>
+          <th>Precio</th>
+          <th>Seleccion</th>
+      </tr>
+      </thead>
+      <tbody>
 
-        `;
-        menu.appendChil
+      </tbody>
+      `;
+
+      document.getElementById('menu').appendChild(tabla);
+
+      Object.keys(data).forEach(categoria =>{
+        data[categoria].forEach(producto =>{
+          const fila = document.createElement('tr')
+          fila.innerHTML=`
+          <td><img src="${producto.imagen}" alt="${producto.name}"></td>
+          <td>${producto.nombre}</td>
+          <td>${producto.descripcion}</td>
+          <td>${producto.precio}</td>
+          <td><input type="checkbox" class="producto" data-precio="${producto.precio}"></td>
+          `;
+          tabla.querySelector('tbody').appendChild(fila);
+
+        });
       });
-    });
 
+      const productos= document.querySelectorAll('.producto');
+      productos.forEach(producto => {
+        producto.addEventListener('change', () =>{
+          var suma =0;
+          productos.forEach(producto => {
+            if(producto.checked){
+              suma +=parseFloat(producto.dataset.precio);
+            }
+          });
+          document.getElementById('resultado').innerHTML=`<h1>TOTAL:$${suma.toFixed(2)} </h1>`
+        });
+      });
+    })
   </script>
-    
 </body>
 </html>
